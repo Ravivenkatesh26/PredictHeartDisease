@@ -1,10 +1,10 @@
-package com.example.predictheartdisease
+package com.example.predictheartdisease.Data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "records_tbl")
-data class EntityData(
+data class HeartData(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String,

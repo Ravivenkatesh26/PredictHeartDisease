@@ -1,4 +1,4 @@
-package com.example.predictheartdisease
+package com.example.predictheartdisease.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -24,6 +24,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import co.DatabaseProvider
+import com.example.predictheartdisease.Data.HeartData
+import com.example.predictheartdisease.FeatureTextField
+import com.example.predictheartdisease.HeartDiseaseModel
+import com.example.predictheartdisease.RecordsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -64,7 +68,7 @@ fun PredictionScreen(model: HeartDiseaseModel) {
                     val featureFloats = features.drop(1).map { it.toFloatOrNull() ?: 0f }.toFloatArray()
                     val prediction = model.predict(featureFloats)
                     predictionResult = if (prediction >= 0.5f) "Yes" else "No"
-                    val entity = EntityData(
+                    val entity = HeartData(
                         name = features[0].ifBlank { "Unknown" },
                         sex = features[1].toFloatOrNull() ?: 0f,
                         chestPainType = features[2].toFloatOrNull() ?: 0f,

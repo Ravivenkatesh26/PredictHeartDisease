@@ -1,7 +1,10 @@
 package com.example.predictheartdisease
 
+import com.example.predictheartdisease.Data.HeartData
+import com.example.predictheartdisease.dao.Dao
+
 class RecordsRepository(private val dao: Dao) {
-    suspend fun insert(record: EntityData): Long = dao.insert(record)
+    suspend fun insert(record: HeartData): Long = dao.insert(record)
 
     suspend fun deleteById(id: Long) = dao.deleteById(id)
 
@@ -9,7 +12,7 @@ class RecordsRepository(private val dao: Dao) {
 
     suspend fun getByName(name: String) = dao.getByName(name)
 
-    suspend fun search(query: String):List<EntityData>{
+    suspend fun search(query: String):List<HeartData>{
         val trimmed = query.trim()
         val asId = trimmed.toLongOrNull()
         return if(asId != null){
