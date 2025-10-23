@@ -37,7 +37,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
-import co.DatabaseProvider
+import com.example.predictheartdisease.Database.DatabaseProvider
 import com.example.predictheartdisease.Data.UserEntity
 import kotlinx.coroutines.launch
 

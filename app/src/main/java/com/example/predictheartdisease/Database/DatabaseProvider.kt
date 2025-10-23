@@ -1,8 +1,7 @@
-package co
+package com.example.predictheartdisease.Database
 
 import android.content.Context
 import androidx.room.Room
-import com.example.predictheartdisease.AppDatabase
 
 object DatabaseProvider{
     @Volatile

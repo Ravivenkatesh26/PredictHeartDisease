@@ -1,4 +1,4 @@
-package com.example.predictheartdisease
+package com.example.predictheartdisease.Database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
